@@ -1,0 +1,3 @@
+[submodule "assets/passwordmaker"]
+	path = assets/passwordmaker
+	url = git@github.com:kzahel/passwordmaker
