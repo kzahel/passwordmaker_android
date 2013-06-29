@@ -1,15 +1,27 @@
 package org.graehl.passwordmaker;
 
 import android.os.Bundle;
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.view.Menu;
+import android.view.View;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
 
 public class MainActivity extends Activity {
 
-    @Override
+    @SuppressLint("SetJavaScriptEnabled")
+	@Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        
+        WebView mywebview = (WebView) findViewById(R.id.web_engine);
+        mywebview.loadUrl("file:///android_asset/passwordmaker/index.html");
+        WebSettings sett = mywebview.getSettings();
+        sett.setJavaScriptEnabled(true);
+        sett.setSupportZoom(true);
+        
     }
 
 
